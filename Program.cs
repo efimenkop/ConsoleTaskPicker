@@ -45,8 +45,8 @@ foreach (var selectedOption in selectedOptions.OrderBy(x => x))
     options[selectedOption].Execute();
 }
 
-Script[] GetOptions() =>
-    new Script[]
+Option[] GetOptions() =>
+    new Option[]
     {
         new ("0. Do stuff" , () => Console.WriteLine("Execute script #0")),
         new("1. Do another stuff", () => Console.WriteLine("Execute script #1") ),
@@ -56,4 +56,4 @@ Script[] GetOptions() =>
 
 Console.WriteLine("\r\nGood bye!");
 
-internal record Script(string Title, Action Execute);
+internal record Option(string Title, Action Execute);
